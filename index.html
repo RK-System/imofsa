@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imo FSA - Imóveis</title>
+    <!--======== custom css link =========-->
+    <link rel="stylesheet" href="css/style.css">
+    <!--========= google font link ========-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header" data-header>
+        <div class="container">
+            <a href="" class="logo">
+                <ion-icon name="home-outline"></ion-icon> Imobiliária
+            </a>
+
+            <nav class="navbar container" data-navbar>
+                <ul class="navbar-list">
+                    <li>
+                        <a href="#" class="navbar-link" data-nav-link>Inicio</a>
+                    </li>
+                    <li>
+                        <a href="#" class="navbar-link" data-nav-link>Sobre nós</a>
+                    </li>
+                    <li>
+                        <a href="#" class="navbar-link" data-nav-link>Serviços</a>
+                    </li>
+                    <li>
+                        <a href="#" class="navbar-link" data-nav-link>Contato</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!--<a href="#" class="btn btn-secondary">Signup</a>-->
+            <button class="nav-toggle-btn" aria-label="Toggle menu" data-nav-toggler>
+                <ion-icon name="menu-outline" aria-hidden="true" class="menu-icon"></ion-icon>
+                <ion-icon name="close-outline" aria-hidden="trur" class="close-icon"></ion-icon>
+            </button>
+        </div>
+    </header>
+
+    <!--======== main =========-->
+    <main>
+        <article class="article">
+            <section class="section hero" aria-label="hero">
+                <div class="container">
+                    <div class="hero-bg">
+                        <div class="hero-content">
+                            <h1 class="h1 hero-title">
+                                Nós vamos ajudar você a encontrar o seu <span class="span">Sonho</span> hoje
+                            </h1>
+
+                            <p class="hero-text">
+                                Compre a casa dos seus sonhos hoje mesmo, com excelência!
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="hero-form-wrapper">
+                        <div class="form-tab">
+                            <button class="tab-btn active" data-tab-btn>Comprar</button>
+                            <button class="tab-btn " data-tab-btn>Alugar</button>
+                            <button class="tab-btn " data-tab-btn>Todos</button>
+                        </div>
+
+                        <form action="" class="hero-form">
+                            <div class="input-wrapper">
+                                <label for="search" class="input-label">Procurar: *</label>
+                                <input type="search" name="search" id="search" placeholder="Pesquise sua casa"
+                                    class="input-field">
+                                <ion-icon name="search-outline"></ion-icon>
+                            </div>
+
+                            <div class="input-wrapper">
+                                <label for="category" class="input-label">Selecione a categoria</label>
+                                <select name="category" id="category" class="dropdown-list">
+                                    <option value="todas">Todas as Categorias</option> 
+                                    <option value="casa">Casa</option>
+                                    <option value="apartamento">Apartamento</option>
+                                    <option value="sala">Salas</option>
+                                    <option value="galpao">Galpões</option>
+                                    <option value="terreno">Terrenos</option>
+                                    <option value="chacara">Chácaras</option>
+                                </select>
+                            </div>
+
+                            <div class="input-wrapper">
+                                <label for="min-price" class="input-label">Min Preço :</label>
+                                <select name="min-price" id="min-price" class="dropdown-list">
+                                    <option value="0">Min Preço</option>
+                                    <option value="5000">5.000,00</option>
+                                    <option value="10000">10.000,00</option>
+                                    <option value="25000">25.000,00</option>
+                                    <option value="50000">50.000,00</option>
+                                    <option value="75000">75.000,00</option>
+                                    <option value="100000">100.000,00</option>
+                                    <option value="150000">150.000,00</option>
+                                </select>
+                            </div>
+
+                            <div class="input-wrapper">
+                                <label for="max-price" class="input-label">Max Preço :</label>
+                                <select name="max-price" id="max-price" class="dropdown-list">
+                                    <option value="999999999">Max Preço</option>
+                                    <option value="5000">5.000,00</option>
+                                    <option value="10000">10.000,00</option>
+                                    <option value="25000">25.000,00</option>
+                                    <option value="50000">50.000,00</option>
+                                    <option value="75000">75.000,00</option>
+                                    <option value="100000">100.000,00</option>
+                                    <option value="150000">150.000,00</option>
+                                </select>
+                            </div>
+                            <!--<button type="submit" class="btn btn-primary">Pesquise agora</button>-->
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section about" id="about" aria-level="about">
+                <div class="container">
+                    <div class="about-banner img-holder" style="--width: 600; --height: 700;">
+                        <img src="images/abt-banner.jpg" width="600px" height="700px" loading="lazy" alt=""
+                            class="img-cover">
+
+                        <button class="play-btn" aria-label="play video">
+                            <ion-icon name="play" aria-hidden="true"></ion-icon>
+                        </button>
+                    </div>
+
+                    <div class="about-content">
+                        <h2 class="h2 section-title">Confiável. Acessível. Transparente.</h2>
+                        <p class="section-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
+                            commodi ex illo quisquam impedit, corrupti odio placeat dolores eius voluptas? Mollitia quas
+                            laborum dolores ipsam dolor. Quo provident at modi!</p>
+                        <a href="#" class="btn btn-primary">Saber mais</a>
+                    </div>
+                </div>
+            </section>
+
+            <!--========== SECTION ==========-->
+            <section class="section service" id="service" aria-label="service">
+                <div class="container">
+                    <h2 class="section-title">Como funciona</h2>
+                    <p class="section-text">Uma ótima plataforma para comprar, vender e alugar seus imóveis
+                        sem nenhum agente ou comissões</p>
+                    <ul class="service-list">
+
+                    </ul>
+                </div>
+            </section>
+
+            <!--=========== PROPERTIES ===========-->
+            <section class="section property" id="property" aria-label="property">
+                <div class="container">
+                    <h2 class="h2 section-title">Propriedades em destaque</h2>
+                    <p class="section-text">
+                        Uma ótima plataforma para comprar, vender e alugar imóveis sem nenhum agente ou comissão.
+                    </p>
+
+                    <ul class="property-list"></ul>
+
+                </div>
+            </section>
+
+        </article>
+
+        <!--=========== TESTIMONY ==========-->
+        <section class="section wrapper wrapper2 top">
+            <div class="container">
+                <div class="text">
+                    <div class="heading">
+                        <h2>As pessoas disseram</h2>
+                    </div>
+
+                    <div class="para">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur fuga porro veniam qui
+                            pariatur officia quas! Adipisci quos, optio deserunt rem quis maiores voluptate quidem ipsa
+                            eum placeat nisi id?</p>
+                        <div class="box flex">
+                            <div class="img">
+                                <img src="images/testimonial1.jpg" alt="">
+                            </div> <br>
+                            <div class="name">
+                                <h5>RAUL TORRES</h5>
+                                <h5>VANILLY</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--========= CONTACT =========-->
+        <section class="section contact" id="contact" aria-label="contact">
+            <div class="container">
+                <h2 class="h2 section-title">Tem alguma dúvida? Entre em contato</h2>
+
+                <p class="section-text">
+                    Uma ótima plataforma para comprar, vender e alugar seus imóveis sem nenhum agente ou comissão!
+                </p>
+                <button class="btn btn-primary">
+                    <ion-icon name="call-outline"></ion-icon>
+                    <span class="span"><a href="mailto:feira99@aol.com">Contate-nos</a></span>
+                </button>
+            </div>
+        </section>
+
+        <!--======= FOOTER ========-->
+        <footer class="footer">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="footer-brand">
+                        <a href="#" class="logo">
+                            <ion-icon name="home-outline"></ion-icon> Imobiliária
+                        </a>
+                        <p class="footer-text">
+                            Uma ótima plataforma para comprar, vender e alugar seus imóveis sem nenhum agente ou comissão!
+                        </p>
+                    </div>
+
+                    <ul class="footer-list">
+                        <li>
+                            <p class="footer-list-title">Empresa</p>
+                        </li>
+                        <li>
+                            <a href="#about" class="footer-link">
+                                <ion-icon name="chevron-forward"></ion-icon>
+                                <span class="span">Sobre nós</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#services" class="footer-link">
+                                <ion-icon name="chevron-forward"></ion-icon>
+                                <span class="span">Serviços</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#properties" class="footer-link">
+                                <ion-icon name="chevron-forward"></ion-icon>
+                                <span class="span">Preços</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="footer-link">
+                                <ion-icon name="chevron-forward"></ion-icon>
+                                <span class="span">Contate-nos</span>
+                            </a>
+                        </li>
+
+                        <!--<li>
+                            <a href="#" class="footer-link">
+                                <ion-icon name="chevron-forward"></ion-icon>
+                                <span class="span">Login</span>
+                            </a>
+                        </li>-->
+                    </ul>
+
+                    <ul class="footer-list">
+                        <li>
+                            <p class="footer-list-title">Mais links</p>
+                        </li>
+                        <li>
+                            <a href="#properties" class="footer-link">
+                                <ion-icon name="chevron-forward"></ion-icon>
+                                <span class="span">Listagem</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="footer-link">
+                                <ion-icon name="chevron-forward"></ion-icon>
+                                <span class="span">Contato</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="footer-list">
+                        <li>
+                            <p class="footer-list-title">Detalhes de contato</p>
+                        </li>
+
+                        <li class="footer-item">
+                            <ion-icon name="location-outline"></ion-icon>
+                            <address class="address">
+                                Av. Slomão <br>
+                                nº 305, <br>
+                                Feira de Santana - Bahia - Brasil
+                                <a href="#" class="address-link">Ver no Google Maps</a>
+                            </address>
+                        </li>
+
+                        <li class="footer-item">
+                            <ion-icon name="mail-outline"></ion-icon>
+                            <a href="mailto:feira99@aol.com" class="footer-link">feira99@aol.com</a>
+                        </li>
+
+                        <li class="footer-item">
+                            <ion-icon name="call-outline"></ion-icon>
+                            <a href="tel:75998886000" class="footer-link">(75) 99888-6000</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <p class="copyright">
+                        &copy; 2025 RK-Systems. All rights reserved by <a href="#"
+                            class="copyright-link">RK-Systems</a>
+                    </p>
+
+                    <ul class="social-list">
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-facebook"></ion-icon>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-instagram"></ion-icon>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-twitter"></ion-icon>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-linkedin"></ion-icon>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+        <!--=========== BACK-TO-TOP ==========-->
+        <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+            <ion-icon name="arrow-up" aria-hidden="true"></ion-icon>
+        </a>
+        </article>
+    </main>
+
+    <div class="modal-overlay" data-modal-overlay></div>
+
+    <div class="modal-container" data-modal-container>
+        <div class="modal-content">
+            <button class="modal-close-btn" data-modal-close-btn>
+                <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <div class="media-display">
+                <img src="" alt="Property image" class="media-element" data-modal-img>
+                <div class="video-wrapper" data-video-wrapper></div>
+            </div>
+
+            <div class="media-controls">
+                <button class="media-nav-btn prev" data-prev-btn>
+                    <ion-icon name="chevron-back-outline"></ion-icon>
+                </button>
+                <button class="media-nav-btn next" data-next-btn>
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                </button>
+                <button class="play-video-btn" data-play-video-btn>
+                    <ion-icon name="play-circle-outline"></ion-icon>
+                    <span>Play Video</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!--========= custom js link =========-->
+    <script src="js/main.js" defer></script>
+
+    <!--=========== ionicon link ==========-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
