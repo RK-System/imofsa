@@ -105,44 +105,62 @@ const addEventOnElement = function (element, type, listener) {
   }
 }
 
-//============ NAVBAR ===============//
+// ===== MENU HAMBURGUER & NAVBAR ACTIVE =====
 const navbar = document.querySelector("[data-navbar]");
 const navLinks = document.querySelectorAll("[data-nav-link]");
 const navToggler = document.querySelector("[data-nav-toggler]");
 
-const toggleNav = function () {
+// Função para alternar o menu hamburguer
+function toggleNav() {
   navbar.classList.toggle("active");
-  this.classList.toggle("active");
+  navToggler.classList.toggle("active");
 }
 
-if (navToggler) addEventOnElement(navToggler, "click", toggleNav);
+// Adiciona evento ao botão hamburguer
+if (navToggler) {
+  navToggler.addEventListener("click", toggleNav);
+}
 
-const closeNav = function () {
+// Função para fechar o menu hamburguer
+function closeNav() {
   navbar.classList.remove("active");
   navToggler.classList.remove("active");
 }
 
-if (navLinks.length) addEventOnElement(navLinks, "click", closeNav);
+// Ativar link clicado e fechar menu hamburguer no mobile
+navLinks.forEach(link => {
+  link.addEventListener("click", function () {
+    // Remove 'active' de todos os links
+    navLinks.forEach(l => l.classList.remove("active"));
+    // Adiciona 'active' ao link clicado
+    this.classList.add("active");
+    // Fecha o menu hamburguer (útil no mobile)
+    closeNav();
+  });
+});
 
+// ===== HEADER SHADOW AO SCROLL =====
 const header = document.querySelector("[data-header]");
 window.addEventListener("scroll", function () {
-  if (this.window.scrollY >= 50) {
+  if (window.scrollY >= 50) {
     header.classList.add("active");
   } else {
     header.classList.remove("active");
   }
 });
 
-// Tab Button
+// ===== TABS (se você usar tabs em outra parte do site) =====
 const tabBtns = document.querySelectorAll("[data-tab-btn]");
 let lastClickedTabBtn = tabBtns[0];
 
-const changeTab = function () {
-  lastClickedTabBtn.classList.remove("active");
-  this.classList.add("active");
-  lastClickedTabBtn = this;
-}
-if (tabBtns.length) addEventOnElement(tabBtns, "click", changeTab);
+tabBtns.forEach(tabBtn => {
+  tabBtn.addEventListener("click", function () {
+    if (lastClickedTabBtn) lastClickedTabBtn.classList.remove("active");
+    this.classList.add("active");
+    lastClickedTabBtn = this;
+  });
+});
+
 
 //========================================//
 //  RENDERIZAÇÃO E FILTRO DE PROPRIEDADES //
@@ -156,6 +174,22 @@ const priceFormatter = new Intl.NumberFormat('pt-BR', {
   maximumFractionDigits: 2,
 });
 
+// Pega a lista de favoritos do localStorage
+function getFavorites() {
+  const favoritesJSON = localStorage.getItem('favoriteProperties');
+  return favoritesJSON ? JSON.parse(favoritesJSON) : [];
+}
+
+// Salva a lista de favoritos no localStorage
+function saveFavorites(favorites) {
+  localStorage.setItem('favoriteProperties', JSON.stringify(favorites));
+}
+
+
+// ===================================================================
+//  RENDERIZAÇÃO DE PROPRIEDADES (ATUALIZADA)
+// ===================================================================
+
 const renderProperties = (properties) => {
   propertyList.innerHTML = "";
 
@@ -164,16 +198,25 @@ const renderProperties = (properties) => {
     return;
   }
 
+  // Pega a lista de favoritos UMA VEZ antes de começar o loop
+  const favorites = getFavorites();
+
   properties.forEach(property => {
     const propertyCard = document.createElement("li");
+
+    // Verifica se o imóvel atual está na lista de favoritos
+    const isFavorite = favorites.includes(property.id);
+
     propertyCard.innerHTML = `
       <div class="property-card" data-id="${property.id}">
         <figure class="card-banner img-holder" style="--width: 800; --height: 533;">
           <img src="${property.image}" width="800" height="533" loading="lazy" alt="${property.title}" class="img-cover">
         </figure>
-        <button class="card-action-btn" aria-label="add to favourite">
-          <ion-icon name="heart-outline"></ion-icon>
+
+        <button class="card-action-btn ${isFavorite ? 'active' : ''}" aria-label="add to favourite">
+          <ion-icon name="${isFavorite ? 'heart' : 'heart-outline'}"></ion-icon>
         </button>
+
         <div class="card-content">
           <h3 class="h3">
             <a href="#" class="card-title">${property.title}</a>
@@ -184,17 +227,17 @@ const renderProperties = (properties) => {
               <span class="item-text">${property.area} m2</span>
             </li>
             <li class="card-item">
-              <div class="item-icon"><ion-icon name="bed-outline"></ion-icon></div>
+              <div class="item-icon"><ion-icon name="bed-outline"></ion-icon></div>              
               <span class="item-text">0${property.beds} Quarto(s)</span>
             </li>
             <li class="card-item">
               <div class="item-icon"><ion-icon name="man-outline"></ion-icon></div>
               <span class="item-text">0${property.baths} Banheiro(s)</span>
             </li>
-            <li class="card-item">
-              <div class="item-icon"><ion-icon name="car-outline"></ion-icon></div>
-              <span class="item-text">0${property.baths} Garagem</span>
-            </li>
+             <li class="card-item">
+               <div class="item-icon"><ion-icon name="car-outline"></ion-icon></div>
+               <span class="item-text">0${property.baths} Garagem</span>
+             </li>
           </ul>
           <div class="card-meta">
             <div>
@@ -202,7 +245,7 @@ const renderProperties = (properties) => {
               <span class="meta-text">R$ ${priceFormatter.format(property.price)}</span>
             </div>
             <div>
-              <span class="meta-title">Rating</span>
+              <span class="meta-title">Avaliação</span>
               <span class="meta-text">
                 <div class="rating-wrapper">
                   <ion-icon name="star"></ion-icon>
@@ -221,6 +264,45 @@ const renderProperties = (properties) => {
     propertyList.appendChild(propertyCard);
   });
 }
+
+// ===================================================================
+//  EVENTO DE CLIQUE PARA ADICIONAR/REMOVER FAVORITOS
+// ===================================================================
+
+propertyList.addEventListener('click', function(event) {
+  // Encontra o botão de coração mais próximo que foi clicado
+  const heartButton = event.target.closest('.card-action-btn');
+
+  // Se o clique não foi em um botão de coração, não faz nada
+  if (!heartButton) return;
+
+  // Pega o card e o ID do imóvel
+  const card = heartButton.closest('.property-card');
+  const propertyId = parseInt(card.dataset.id);
+  const icon = heartButton.querySelector('ion-icon');
+
+  // Pega a lista atual de favoritos
+  let favorites = getFavorites();
+
+  // Verifica se o imóvel JÁ é um favorito
+  if (favorites.includes(propertyId)) {
+    // Se sim, REMOVE da lista
+    favorites = favorites.filter(id => id !== propertyId);
+    // E atualiza a aparência do botão
+    icon.name = 'heart-outline';
+    heartButton.classList.remove('active');
+  } else {
+    // Se não, ADICIONA na lista
+    favorites.push(propertyId);
+    // E atualiza a aparência do botão
+    icon.name = 'heart';
+    heartButton.classList.add('active');
+  }
+
+  // Salva a nova lista (modificada) de volta no localStorage
+  saveFavorites(favorites);
+});
+
 
 // ========== FILTRO PRINCIPAL ==========
 

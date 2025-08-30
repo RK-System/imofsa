@@ -9,6 +9,7 @@
     <!--======== custom css link =========-->
     <link rel="stylesheet" href="css/style.css">
     <!--========= google font link ========-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap"
@@ -29,13 +30,13 @@
                         <a href="#" class="navbar-link" data-nav-link>Inicio</a>
                     </li>
                     <li>
-                        <a href="#" class="navbar-link" data-nav-link>Sobre nós</a>
+                        <a href="#servicos" class="navbar-link" data-nav-link>Serviços</a>
                     </li>
                     <li>
-                        <a href="#" class="navbar-link" data-nav-link>Serviços</a>
+                        <a href="#sobre" class="navbar-link" data-nav-link>Sobre nós</a>
                     </li>
                     <li>
-                        <a href="#" class="navbar-link" data-nav-link>Contato</a>
+                        <a href="#contato" class="navbar-link" data-nav-link>Contato</a>
                     </li>
                 </ul>
             </nav>
@@ -59,7 +60,7 @@
                                 Nós vamos ajudar você a encontrar o seu <span class="span">Sonho</span> hoje
                             </h1>
 
-                            <p class="hero-text">
+                            <p id="servicos" class="hero-text">
                                 Compre a casa dos seus sonhos hoje mesmo, com excelência!
                             </p>
                         </div>
@@ -67,15 +68,15 @@
 
                     <div class="hero-form-wrapper">
                         <div class="form-tab">
-                            <button class="tab-btn active" data-tab-btn>Comprar</button>
-                            <button class="tab-btn " data-tab-btn>Alugar</button>
-                            <button class="tab-btn " data-tab-btn>Todos</button>
+                            <button class="tab-btn active" data-tab-btn>Todos</button>
+                            <button class="tab-btn" data-tab-btn>Comprar</button>
+                            <button class="tab-btn" data-tab-btn>Alugar</button>
                         </div>
 
                         <form action="" class="hero-form">
                             <div class="input-wrapper">
-                                <label for="search" class="input-label">Procurar: *</label>
-                                <input type="search" name="search" id="search" placeholder="Pesquise sua casa"
+                                <label for="search" class="input-label">Procurar:</label>
+                                <input type="search" name="search" id="search" placeholder="Pesquise seu imóvel"
                                     class="input-field">
                                 <ion-icon name="search-outline"></ion-icon>
                             </div>
@@ -83,7 +84,7 @@
                             <div class="input-wrapper">
                                 <label for="category" class="input-label">Selecione a categoria</label>
                                 <select name="category" id="category" class="dropdown-list">
-                                    <option value="todas">Todas as Categorias</option> 
+                                    <option value="todas">Todas as Categorias</option>
                                     <option value="casa">Casa</option>
                                     <option value="apartamento">Apartamento</option>
                                     <option value="sala">Salas</option>
@@ -126,7 +127,7 @@
                 </div>
             </section>
 
-            <section class="section about" id="about" aria-level="about">
+            <section id="sobre" class="section about" id="about" aria-level="about">
                 <div class="container">
                     <div class="about-banner img-holder" style="--width: 600; --height: 700;">
                         <img src="images/abt-banner.jpg" width="600px" height="700px" loading="lazy" alt=""
@@ -139,10 +140,22 @@
 
                     <div class="about-content">
                         <h2 class="h2 section-title">Confiável. Acessível. Transparente.</h2>
-                        <p class="section-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-                            commodi ex illo quisquam impedit, corrupti odio placeat dolores eius voluptas? Mollitia quas
-                            laborum dolores ipsam dolor. Quo provident at modi!</p>
-                        <a href="#" class="btn btn-primary">Saber mais</a>
+                        <p class="section-text">Somos uma empresa inovadora que atua no mercado imobiliário, que busca
+                            soluções para os clientes interessados na compra, venda e locação de imóveis. Através da
+                            nossa expertise em engenharia, projetos e financiamento habitacional, podemos orientar e
+                            sugerir o
+                            melhor negócio, de acordo com a capacidade financeira de cada cliente.
+                            Possuímos em nosso portfólio uma ampla variedade de imóveis, que atendem às diferentes
+                            necessidades e preferências dos clientes. Desde apartamentos e casas até terrenos e imóveis
+                            comerciais, a imobiliária trabalha para oferecer opções que se adequem ao perfil de cada
+                            cliente. Além disso, a imobiliária realiza uma análise detalhada de cada imóvel, garantindo
+                            que esteja em conformidade com as normas e regulamentações vigentes.
+                            Com um time de profissionais especializados no mercado imobiliário, nossa imobiliária atua
+                            como intermediária entre compradores e vendedores, garantindo que todas as partes envolvidas
+                            sejam atendidas de forma ética e responsável. A Veritas tem como compromisso atender as
+                            necessidades individuais e ajudar o desenvolvimento do mercado imobiliário da região.</p>
+                        <a href="https://wa.me/5511987654321/?text=Olá%2C%20vim%20através%20do%20site%21"
+                            target="_blank" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Fale conosco</a>
                     </div>
                 </div>
             </section>
@@ -151,8 +164,8 @@
             <section class="section service" id="service" aria-label="service">
                 <div class="container">
                     <h2 class="section-title">Como funciona</h2>
-                    <p class="section-text">Uma ótima plataforma para comprar, vender e alugar seus imóveis
-                        sem nenhum agente ou comissões</p>
+                    <p class="section-text">Uma ótima plataforma para comprar, vender e alugar seus imóveis com
+                        excelência!</p>
                     <ul class="service-list">
 
                     </ul>
@@ -164,7 +177,7 @@
                 <div class="container">
                     <h2 class="h2 section-title">Propriedades em destaque</h2>
                     <p class="section-text">
-                        Uma ótima plataforma para comprar, vender e alugar imóveis sem nenhum agente ou comissão.
+                        Uma ótima plataforma para comprar, vender e alugar imóveis com excelência!
                     </p>
 
                     <ul class="property-list"></ul>
@@ -183,16 +196,16 @@
                     </div>
 
                     <div class="para">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur fuga porro veniam qui
-                            pariatur officia quas! Adipisci quos, optio deserunt rem quis maiores voluptate quidem ipsa
-                            eum placeat nisi id?</p>
+                        <p>Serviço muito bem executado, pessoal de alta qualidade, práticos, rápidos,
+                            sabem o que fazer e nos orientam perfeitamente sobre o andamento dos processos
+                            do começo ao fim. Recomendo sem piscar. Fui atendido pela Bia e pelo Rogério.</p>
                         <div class="box flex">
                             <div class="img">
                                 <img src="images/testimonial1.jpg" alt="">
                             </div> <br>
                             <div class="name">
                                 <h5>RAUL TORRES</h5>
-                                <h5>VANILLY</h5>
+                                <h5 id="contato">SANTANA</h5>
                             </div>
                         </div>
                     </div>
@@ -205,12 +218,15 @@
                 <h2 class="h2 section-title">Tem alguma dúvida? Entre em contato</h2>
 
                 <p class="section-text">
-                    Uma ótima plataforma para comprar, vender e alugar seus imóveis sem nenhum agente ou comissão!
+                    Uma ótima plataforma para comprar, vender e alugar seus imóveis com excelência!
                 </p>
                 <button class="btn btn-primary">
-                    <ion-icon name="call-outline"></ion-icon>
+                    <ion-icon name="mail-outline"></ion-icon>
                     <span class="span"><a href="mailto:feira99@aol.com">Contate-nos</a></span>
-                </button>
+                </button> <br>
+                <a href="https://wa.me/5511987654321/?text=Olá%2C%20vim%20através%20do%20site%21"
+                target="_blank" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Fale conosco</a>
+
             </div>
         </section>
 
@@ -223,7 +239,7 @@
                             <ion-icon name="home-outline"></ion-icon> Imobiliária
                         </a>
                         <p class="footer-text">
-                            Uma ótima plataforma para comprar, vender e alugar seus imóveis sem nenhum agente ou comissão!
+                            Uma ótima plataforma para comprar, vender e alugar seus imóveis com excelência!
                         </p>
                     </div>
 
@@ -288,13 +304,18 @@
                         </li>
 
                         <li class="footer-item">
-                            <ion-icon name="location-outline"></ion-icon>
+                            <ion-icon name="map-outline"></ion-icon>
                             <address class="address">
                                 Av. Slomão <br>
                                 nº 305, <br>
                                 Feira de Santana - Bahia - Brasil
-                                <a href="#" class="address-link">Ver no Google Maps</a>
                             </address>
+                        </li>
+
+                        <li class="footer-item">
+                            <ion-icon name="location-outline"></ion-icon>
+                            <a href="https://maps.app.goo.gl/2KSScmmwcSihWQ8aA" target="_blank" class="address-link">Ver
+                                no Google Maps</a>
                         </li>
 
                         <li class="footer-item">
@@ -312,8 +333,10 @@
             <div class="footer-bottom">
                 <div class="container">
                     <p class="copyright">
-                        &copy; 2025 RK-Systems. All rights reserved by <a href="#"
-                            class="copyright-link">RK-Systems</a>
+                        &copy; 2025 RK-Systems. All rights reserved by <a
+                            href="https://portfolio-xi-rust-88.vercel.app/" target="_blank" class="copyright-link">
+                            <span style="text-decoration: underline; font-weight: bold; font-style: italic; text-decoration-thickness: 1.5px; text-decoration-color: rgb(228, 228, 233);
+                            color: rgb(80, 80, 236);">RK-Systems</span></a>
                     </p>
 
                     <ul class="social-list">
