@@ -4,92 +4,98 @@
 const propertiesData = [
   {
     id: 1,
-    title: "Casa Rua Real, 367 Centro Irará Bahia",
-    image: "images/img2.jpg",
-    gallery: ["images/img2.jpg", "images/gallery1.jpg", "images/gallery2.jpg"],
+    title: "Casa Rua Real Madrid, 367 <br> Centro - Irará/BA",
+    image: "images/img1.jpg",
+    gallery: ["images/img1.jpg", "images/img1a.jpg", "images/img1b.jpg", "images/img1c.jpg", "images/img1d.jpg"],
     videoUrl: "https://www.youtube.com/embed/PVoQZhnyxiE",
     category: "casa",
     negocio: "comprar",
-    area: 7500,
+    area: 142,
     beds: 3,
     baths: 2,
+    garage: 3,
     price: 5000,
     rating: 5.0,
     reviews: 24
   },
   {
     id: 2,
-    title: "Chácara Estrada do Mato, 102 Matinha Feira de Santana Bahia",
-    image: "images/img3.jpg",
-    gallery: ["images/img3.jpg", "images/gallery3.jpg", "images/gallery4.jpg"],
+    title: "Chácara Estrada do Mato, 102 <br> Matinha - Feira de Santana/BA",
+    image: "images/img2.jpg",
+    gallery: ["images/img2.jpg", "images/img2a.jpg", "images/img2b.jpg", "images/img2c.jpg", "images/img2d.jpg"],
     videoUrl: "https://www.youtube.com/embed/RXxOZCV9Czk",
     category: "chacara",
     negocio: "comprar",
-    area: 8000,
+    area: 2500,
     beds: 3,
     baths: 2,
-    price: 4000,
+    garage: 4,
+    price: 8000,
     rating: 5.0,
     reviews: 24
   },
   {
     id: 3,
-    title: "49 Consett Rd, Hilton, UK",
-    image: "images/img4.jpg",
-    gallery: ["images/img4.jpg", "images/gallery5.jpg", "images/gallery1.jpg"],
-    videoUrl: "https://www.youtube.com/embed/y2tEPkio_9A",
-    category: "offices",
+    title: "Apartamento Av. Leal Maia, 207 <br> Centro - Salvador/BA",
+    image: "images/img3.jpg",
+    gallery: ["images/img3.jpg", "images/img3a.jpg", "images/img3b.jpg", "images/img3c.jpg", "images/img3d.jpg"],
+    videoUrl: "https://www.youtube.com/embed/5A8ZdLnXizE",
+    category: "apartamento",
     negocio: "alugar/comprar",
-    area: 8000,
+    area: 67,
     beds: 3,
     baths: 3,
-    price: 5000,
+    garage: 1,
+    price: 50000,
     rating: 5.0,
     reviews: 24
   },
   {
     id: 4,
-    title: "5 Helland Bridge, Upper Boat, UK",
-    image: "images/img5.jpg",
-    gallery: ["images/img5.jpg", "images/gallery2.jpg", "images/gallery3.jpg"],
-    videoUrl: null,
-    category: "townhome",
+    title: "Sala Ed. Premier Rua Amazonas, 67 <br> Centro - Salvador/BA",
+    image: "images/img4.jpg",
+    gallery: ["images/img4.jpg", "images/img4a.jpg", "images/img4b.jpg", "images/img4c.jpg", "images/img4d.jpg"],
+    videoUrl: "https://www.youtube.com/embed/PVoQZhnyxiE",
+    category: "sala",
     negocio: "comprar",
-    area: 7500,
+    area: 44,
     beds: 3,
     baths: 2,
-    price: 3500,
+    garage: 0,
+    price: 100000,
     rating: 5.0,
     reviews: 24
   },
   {
     id: 5,
-    title: "53 Main St, Acharacle, UK",
-    image: "images/img6.jpg",
-    gallery: ["images/img6.jpg", "images/gallery4.jpg", "images/gallery5.jpg"],
-    videoUrl: "https://www.youtube.com/embed/LXb3EKWsInQ",
-    category: "house",
+    title: "Terreno BR-324 KM 107 s/n, <br> Jaíba - Irará/BA",
+    image: "images/img5.jpg",
+    gallery: ["images/img5.jpg", "images/img5a.jpg", "images/img5b.jpg", "images/img5c.jpg", "images/img5d.jpg"],
+    videoUrl: "https://www.youtube.com/embed/5A8ZdLnXizE",
+    category: "galpao",
     negocio: "alugar",
-    area: 7500,
+    area: 6500,
     beds: 3,
     baths: 2,
-    price: 2800,
-    rating: 4.8,
+    garage: 9,
+    price: 150000,
+    rating: 4,
     reviews: 19
   },
   {
     id: 6,
-    title: "10 Southlands Road, United Kingdom",
-    image: "images/img7.jpg",
-    gallery: ["images/img7.jpg", "images/gallery1.jpg", "images/gallery3.jpg"],
-    videoUrl: null,
-    category: "apartment",
+    title: "Galpão Rua Piracicaba, 1.658 <br> Jussara - Jequié/BA",
+    image: "images/img6.jpg",
+    gallery: ["images/img6.jpg", "images/img6a.jpg", "images/img6b.jpg", "images/img6c.jpg", "images/img6d.jpg"],
+    videoUrl:  "https://www.youtube.com/embed/RXxOZCV9Czk",
+    category: "terreno",
     negocio: "alugar/comprar",
-    area: 8000,
+    area: 1200,
     beds: 4,
     baths: 3,
-    price: 5500,
-    rating: 4.9,
+    garage: 8,
+    price: 120000,
+    rating: 7,
     reviews: 31
   },
 ];
@@ -236,7 +242,7 @@ const renderProperties = (properties) => {
             </li>
              <li class="card-item">
                <div class="item-icon"><ion-icon name="car-outline"></ion-icon></div>
-               <span class="item-text">0${property.baths} Garagem</span>
+               <span class="item-text">0${property.garage} Garagem</span>
              </li>
           </ul>
           <div class="card-meta">
@@ -269,7 +275,7 @@ const renderProperties = (properties) => {
 //  EVENTO DE CLIQUE PARA ADICIONAR/REMOVER FAVORITOS
 // ===================================================================
 
-propertyList.addEventListener('click', function(event) {
+propertyList.addEventListener('click', function (event) {
   // Encontra o botão de coração mais próximo que foi clicado
   const heartButton = event.target.closest('.card-action-btn');
 
@@ -443,3 +449,66 @@ if (modalOverlay) modalOverlay.addEventListener("click", closeModal);
 if (nextBtn) nextBtn.addEventListener("click", showNextImage);
 if (prevBtn) prevBtn.addEventListener("click", showPrevImage);
 if (playVideoBtn) playVideoBtn.addEventListener("click", playVideo);
+
+// Mostra o botão quando rolar para baixo
+window.onscroll = function () {
+  const topButton = document.getElementById("top");
+  if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+    topButton.classList.add("show"); // Mostra o botão
+  } else {
+    topButton.classList.remove("show"); // Esconde o botão
+  }
+};
+
+// Rolagem suave para o topo
+document.getElementById("top").addEventListener("click", function (event) {
+  event.preventDefault();
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth" // Transição suave para o topo
+  });
+});
+
+// --- Lógica do Banner LGPD ---
+const lgpdBanner = document.getElementById('lgpdBanner');
+const acceptLgpdBtn = document.getElementById('acceptLgpdBtn');
+const declineLgpdBtn = document.getElementById('declineLgpdBtn');
+
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+  return null;
+}
+
+function setCookie(name, value, days) {
+  const expires = new Date(Date.now() + days * 864e5).toUTCString();
+  document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+}
+
+if (!getCookie('lgpdConsent')) {
+  lgpdBanner.classList.remove('hidden');
+}
+
+acceptLgpdBtn.addEventListener('click', () => {
+  setCookie('lgpdConsent', 'accepted', 365);
+  lgpdBanner.classList.add('hidden');
+  toastr.success("Cookies aceitos com sucesso!", "Confirmação");
+});
+
+declineLgpdBtn.addEventListener('click', () => {
+  setCookie('lgpdConsent', 'declined', 1);
+  lgpdBanner.classList.add('hidden');
+  toastr.error("Cookies foram rejeitados.", "Aviso");
+});
+
+// --- Configurações do Toastr ---
+toastr.options = {
+  positionClass: "toast-bottom-center",
+  progressBar: true,
+  timeOut: 3000,
+  showEasing: "swing",
+  hideEasing: "linear",
+  showMethod: "fadeIn",
+  hideMethod: "fadeOut"
+};
