@@ -4,6 +4,7 @@
 
     --oxford-blue_60: hsla(224, 34%, 13%, 0.6);
     --green-pigment: hsl(202, 86%, 51%);
+    --green-suave: hsl(202, 86%, 61%);
     --oxford-blue: hsl(224, 34%, 13%);
     --maximum-red: hsl(0, 72%, 51%);
     --eerie-black: hsl(0, 0%, 9%);
@@ -22,6 +23,7 @@
     --fav: hsl(43, 76%, 62%);
     --white: hsl(0, 0%, 100%);
     --black: hsl(0, 0%, 0%);
+    --color-primary-5: #ffcb45;
 
     /*======= typography ========*/
 
@@ -199,9 +201,8 @@ body {
 }
 
 .section-text {
-    line-height: 1.6;
+    line-height: 1;
     text-align: justify;
-    font-style: italic;
 }
 
 /*======== HEADER STYLE =========*/
@@ -485,33 +486,33 @@ body {
     margin-block: 20px 25px;
 }
 
-/*========== SERVICES =========*/
+/*========== imoveisS =========*/
 
-.service :is(.section-title, .section-text) {
+.imoveis :is(.section-title, .section-text) {
     text-align: center;
 }
 
-.service .section-text {
+.imoveis .section-text {
     margin-block: 15px 16px;
 }
 
-.service-list {
+.imoveis-list {
     display: grid;
     gap: 30px;
 }
 
-.service-card {
+.imoveis-card {
     text-align: center;
     border-radius: 10px;
     transition: .3s;
     padding: 10px;
 }
 
-.service-card:hover {
+.imoveis-card:hover {
     box-shadow: var(--shadow-5);
 }
 
-.service-card .card-icon {
+.imoveis-card .card-icon {
     background-color: var(--mint-cream);
     width: 100px;
     height: 100px;
@@ -521,17 +522,17 @@ body {
     margin-inline: auto;
 }
 
-.service-card .card-icon ion-icon {
+.imoveis-card .card-icon ion-icon {
     font-size: 30px;
     color: var(--green-pigment);
     --ionicon-stroke-width: 45px;
 }
 
-.service-card .card-title {
+.imoveis-card .card-title {
     margin-block: 25px 12px;
 }
 
-.service-card .card-text {
+.imoveis-card .card-text {
     line-height: 1.6;
 }
 
@@ -851,28 +852,6 @@ body {
     color: var(--white);
 }
 
-/* back to top */
-
-.back-top-btn {
-    position: fixed;
-    bottom: 10px;
-    right: 20px;
-    background-color: var(--green-pigment);
-    color: white;
-    font-size: 14px;
-    padding: 12px;
-    border-radius: 50px;
-    opacity: 0;
-    visibility: hidden;
-    transition: var(--transition);
-    z-index: 4;
-}
-
-.back-top-btn:active {
-    visibility: visible;
-    opacity: 1;
-    transform: translateY(-10px);
-}
 
 
 /*=========== Media Queries */
@@ -957,7 +936,7 @@ body {
         margin-block-end: 0;
     }
 
-    .service-list,
+    .imoveis-list,
     .property-list {
         grid-template-columns: 1fr 1fr;
     }
@@ -1037,7 +1016,7 @@ body {
         gap: 50px
     }
 
-    .service-list,
+    .imoveis-list,
     .property-list {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -1256,3 +1235,99 @@ body.modal-active {
 .video-wrapper {
     display: none;
 }
+
+.btnPriv {
+    position: fixed;
+    height: 40px;
+    bottom: 10px;
+    right: 20px;
+    background-color: var(--green-pigment);
+    color: white;
+    font-size: 5px;
+    padding: 10px;
+    border-radius: 50px;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    z-index: 4;
+}
+
+.btnPriv.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(-10px);
+}
+
+.btnPriv:hover {
+    background-color: var(--green-suave);
+    transform: scale(1.1);
+}
+
+.btnPriv::after {
+    content: "↑";    
+    font-size: 23px;
+    font-weight: bold;
+    color: rgb(0, 8, 8);
+    transition: margin-top 250ms;
+    padding: 25px 5px 5px 5px;
+}
+
+.btnPriv:hover::after {
+    margin-top: -8px;
+}
+
+/* BANNER LGPD */
+.lgpd-banner {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 600px;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 14px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.lgpd-banner.hidden {
+    display: none;
+}
+
+.lgpd-banner p {
+    text-align: left;
+}
+
+.lgpd-banner a {
+    color: var(--color-primary-5);
+    text-decoration: underline;
+}
+
+.lgpd-banner div {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.lgpd-banner button {
+    background-color: var(--color-primary-5);
+    color: #000;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.lgpd-banner button#declineLgpdBtn {
+    background-color: #555;
+    color: #fff;
+}
+
