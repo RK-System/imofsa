@@ -188,6 +188,7 @@ body {
 .img-holder {
     aspect-ratio: var(--width) / var(--height);
     background-color: var(--gainsboro);
+    cursor: pointer;
 }
 
 .img-cover {
